@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<module xmlns="urn:jboss:module:1.1" name="com.oracle.xmlparserv2">
+
+    <resources>
+      <resource-root path="xmlparserv2-11.1.1.2.0.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="com.oracle.xmlparserv2"/>
+        <module name="com.oracle.ojdbc6"/>
+    </dependencies>
+</module>
