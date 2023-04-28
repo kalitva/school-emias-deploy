@@ -40,7 +40,7 @@ cp -r resources/jackson wildfly-10.1.0.Final/modules/system/layers/base/com/fast
 
 log 'building and deploying war'
 cd $EMIAS_SCHOOL_SRC
-mvn clean install || log_error 'build failure' && clean_and_exit
+mvn clean install || (log_error 'build failure' && clean_and_exit)
 cd $DESTINATION
 cp $EMIAS_SCHOOL_SRC/school-service/target/school-service.war wildfly-10.1.0.Final/standalone/deployments/
 
@@ -50,8 +50,8 @@ mvn -P migration liquibase:update \
 -DskipTests=true \
 -Dliquibase.driver=oracle.jdbc.driver.OracleDriver \
 -Dliquibase.changeLogFile=src/main/resources/oracle/master_init.xml \
--Dliquibase.url=jdbc:oracle:thin:@//localhost:1521/EE.oracle.docker \
+-Dliquibase.url=jdbc:oracle:thin:@//localhost:1521/orcl \
 -Dliquibase.username=EMIAS_SCHOOL \
 -Dliquibase.password=EMIAS_SCHOOL \
 -Dliquibase.verbose=true \
--Dliquibase.dropFirst=false || log_error 'build failure' && clean_and_exit
+-Dliquibase.dropFirst=false || (log_error 'build failure' && clean_and_exit)

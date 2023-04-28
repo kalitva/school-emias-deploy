@@ -144,7 +144,7 @@
                     </security>
                 </datasource>
                 <datasource jndi-name="java:jboss/datasources/emiasSchool" pool-name="OracleEmiasDS" enabled="true">
-                    <connection-url>jdbc:oracle:thin:@//localhost:1521/EE.oracle.docker</connection-url>
+                    <connection-url>jdbc:oracle:thin:@//localhost:1521/orcl</connection-url>
                     <driver>oracle</driver>
                     <pool>
                         <min-pool-size>1</min-pool-size>
